@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Leap ^ payment loops</title>
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/abi-decoder.js"></script>
+    <style>
+      body {
+  font-family: 'Source Sans Pro', 'Arial';
+  background-color:#ccc;
+  padding: 30px;
+}
+.main {
+  width: 50%;
+}
+.panel {
+  top: 20px;
+  width: 300px;
+}
+.panel_left {
+  left: 20px;
+}
+.panel_right {
+  right: 20px;
+}
+#all_users {
+  color: #666;
+}
+.all_addresses {
+  height: 160px;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  opacity: 0.5;
+}
+#amount {
+  width: 140px;
+}
+
+label {
+  display:block;
+  margin-bottom:10px;
+}
+input {
+  width: 280px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+button {
+  display: block;
+  margin: 30px 0;
+  padding: 15px 30px;
+  border: 1px solid #666;
+  background: #CCC;
+}
+    </style>
+  </head>
+  <body>
+  	<h1>Leap ^ payment loops</h1>
+    <div class="panel panel_right">
+		<h2>Select account</h2>
+		<select id="myaccount" class="account"></select>
+		<p>Total amount borrowed: <span id="total_owed"></span></p>
+		<p>Last transaction timestamp: <span id="last_active"></span></p>
+	</div>
+	
+    <div class="main">
+      <h2>Add transaction</h2>
+
+      <label for="creditor">
+      	Lender's address:
+      </label>
+      	<input type="text" id="creditor">
+      
+      <label for="amount">
+      	Amount:
+      </label>
+		<input id="amount" type="text">
+      
+      <button id="addiou">Add transaction</button>
+      <h2>Members with outstanding balances</h2>
+      <ul id="all_users"></ul>
+      <pre id="log"></pre>
+      <div class="all_addresses">
+		<h2 style="font-size:16px">All members</h2>
+		<ol class="address_list"></ol>
+	</div>
+    </div>
+    
+    <script src="./js/jquery-3.2.1.slim.min.js"></script>
+    <script src="./js/smartContract.js"></script>
+    <script src="./config.js"></script>
+    <script src="./js/js.js"></script>
+    <script src="./js/view.js"></script>
+  </body>
+</html>
